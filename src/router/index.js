@@ -3,6 +3,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import PageHome from '@/pages/PageHome'
 import PageThreadShow from '@/pages/PageThreadShow'
 import PageNotFound from '@/pages/PageNotFound'
+import PageForum from '@/pages/PageForum'
 
 import sourceData from '@/data.json'
 
@@ -36,12 +37,18 @@ const routes = [
             }
             // if doesnt, redirect
 
-
         }
     },
     {   path: '/:pathMatch(.*)*', 
         name: 'NotFound', 
         component: PageNotFound },
+        {
+            path: '/forum/:id',
+            name: 'Forum',
+            component: PageForum,
+            props: true
+
+        }
 
   ]
 
